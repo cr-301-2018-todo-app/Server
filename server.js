@@ -12,4 +12,16 @@ const app = express();
 
 app.get('/', (request, response) => response.send('Server works!'));
 
+// API Routes
+app.get('/tasks', (req, res) => {
+  // let SQL = `...`
+  // client.query(SQL)...
+
+  res.send([
+    {
+      title: 'Eat Lunch',
+    }
+  ]);
+});
+
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
