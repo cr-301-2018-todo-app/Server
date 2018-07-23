@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cr-301-2018-todo-app/Server/issues"
   },
-  "homepage": "https://github.com/cr-301-2018-todo-app/Server#readme"
+  "homepage": "https://github.com/cr-301-2018-todo-app/Server#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
