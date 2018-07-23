@@ -1,0 +1,20 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "description": "Week 3 demo for CR DeltaV Code 301",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cr-301-2018-todo-app/Server.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cr-301-2018-todo-app/Server/issues"
+  },
+  "homepage": "https://github.com/cr-301-2018-todo-app/Server#readme"
+}
