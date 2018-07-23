@@ -6,9 +6,12 @@ if (!PORT) throw new Error('PORT is missing!');
 // export PORT=3000
 
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 
 // Middleware goes here (app.use)
+app.use(cors());
 
 app.get('/', (request, response) => response.send('Server works!'));
 
