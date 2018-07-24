@@ -19,8 +19,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (request, response) => response.send('Server works!'));
 
 // Temporary "database"
+let nextTaskId = 1;
 const tasks = [
   {
+    id: nextTaskId++,
     title: 'Eat Lunch',
     description: 'I are teh hungry',
     category: 'Food'
@@ -35,8 +37,23 @@ app.get('/tasks', (req, res) => {
   res.send(tasks);
 });
 
+app.get('/task/:id', (req, res) => {
+  // let SQL = `SELECT ... WHERE id = $1`
+  console.log(`Finding task with id = ${req.params.id}`)
+
+  let currentTask = tasks.find(task => task.id === parseInt(req.params.id));
+  console.log(currentTask)
+  if (currentTask) {
+    res.send(currentTask);
+  }
+  else {
+    res.sendStatus(404);
+  }
+});
+
 app.post('/tasks/add', (req, res) => {
   let newTask = {};
+  newTask.id = nextTaskId++;
   newTask.title = req.body.title;
   newTask.description = req.body.description;
   newTask.category = req.body.category;
